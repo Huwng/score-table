@@ -10,7 +10,7 @@
   + .gigattributes, .gitignore: git configuration
   + LICENSE: license of app source
   + package.json, package-lock.json: node package file
-- Must install a local electron using command `$ nppm install electron --save-dev` or `$ npm install electron -D`
+- Must install a local electron using command `$ npm install electron --save-dev` or `$ npm install electron -D`
 ----------
 Happy Coding ^^.
 ----------
