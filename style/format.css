@@ -1,0 +1,29 @@
+* {
+	margin: 0;
+	padding: 0;
+	user-select: none;
+	outline: none;
+	overflow: hidden;
+}
+
+.flex {
+	display: flex;
+	align-items: center;
+}
+
+.f-center {
+	justify-content: center;
+}
+
+.f-space-a {
+	justify-content: space-around;
+}
+
+.f-space-b {
+	justify-content: space-between;
+}
+
+.body {
+	width: 100vw;
+	height: 100vh;
+}

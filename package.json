@@ -1,0 +1,22 @@
+{
+  "name": "score-table",
+  "version": "1.0.0",
+  "description": "Project Score Table",
+  "main": "app.js",
+  "scripts": {
+    "start": "electron ."    
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TeriaKatayoki/score-table.git"
+  },
+  "author": "Teria Katayoki",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TeriaKatayoki/score-table/issues"
+  },
+  "homepage": "https://github.com/TeriaKatayoki/score-table#readme",
+  "devDependencies": {
+    "electron": "^9.0.4"
+  }
+}
