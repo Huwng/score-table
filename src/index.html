@@ -6,6 +6,7 @@
 	<link rel="stylesheet" href="../style/nav.css">
 	<link rel="stylesheet" href="../style/float-btn.css">
 	<link rel="stylesheet" href="../style/panel.css">
+	<link rel="stylesheet" href="../style/login-screen.css">
 	<meta charset="UTF-8">
 	<title id="process-title"></title>
 </head>
@@ -30,6 +31,7 @@
 			</div>
 		</div>
 	</div>
+
 	<div class="float-btn btn-option flex f-center" id="float-option-btn">
 		<img src="../res/white-icon/settings.png" alt="">
 	</div>
@@ -47,17 +49,37 @@
 			<div class="innerspan">Option 4</div>
 		</span>
 	</div>
+
 	<div class="app-panel flex f-center">
 		<div class="side-bar" id="app-sidebar"></div>
 		<div class="body" id="app-body">
-
+			<div id="login-screen" class="flex f-center">
+				<form action="login" class="flex f-space-a f-vertical">
+					<div class="login-panel">
+						<div class="form-title flex f-center">
+							<span>Login</span>
+						</div>
+						<div class="card name-form flex f-center f-vertical">
+							<div class="label name-lab"><span>Name</span></div>
+							<input type="text" id="inp-name">
+						</div>
+						<div class="card pass-form flex f-center f-vertical">
+							<div class="label pass-lab"><span>Password</span></div>
+							<input type="password" id="inp-pass">
+						</div>
+						<button id="smt-login">Login</button>
+					</div>
+				</form>
+			</div>
 		</div>
 	</div>
+
 	<script>
 		var remote = require('electron').remote
 		var shared = remote.getGlobal('shared')
 	</script>
 	<script src="../script/template.js"></script>
+	<script src="../script/cryption.js"></script>
 	<script src="../script/index/prepaire.js"></script>
 	<script src="../script/index/navigation.js"></script>
 	<script src="../script/index/float-menu.js"></script>

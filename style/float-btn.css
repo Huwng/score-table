@@ -7,7 +7,7 @@
 	right: 10px;
 	box-shadow: #00000044 2px 2px 3px;
 	background: #0000ffdd;
-	transition: 500ms ease-in-out;
+	transition: 300ms ease-in-out;
 	z-index: 4;
 }
 
@@ -18,7 +18,7 @@
 .float-btn img {
 	width: 30px;
 	height: 30px;
-	transition: 500ms ease-in-out;
+	transition: 300ms ease-in-out;
 }
 
 .float-btn.active img{
@@ -34,7 +34,7 @@
 	overflow: visible;
 	visibility: hidden;
 	opacity: 0;
-	transition: 500ms ease-in-out;
+	transition: 300ms ease-in-out;
 	z-index: 4;
 }
 
@@ -50,12 +50,12 @@
 	border-radius: 30px;
 	box-shadow: #00000044 2px 2px 3px, #00000044 -2px -2px 3px;
 	transform: translateX(100%);
-	transition: 500ms ease-in-out;
+	transition: 300ms ease-in-out;
 }
 
 .float-menu span .innerspan {
 	opacity: 0.5;
-	transition: 500ms ease-in-out;
+	transition: 300ms ease-in-out;
 }
 
 .float-menu span:hover .innerspan {

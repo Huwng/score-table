@@ -22,14 +22,14 @@
 	width: 100%;
 	height: 30px;
 	margin-left: 10px;
-	transition: 500ms ease-in-out;
+	transition: 300ms ease-in-out;
 	-webkit-app-region: drag;
 }
 
 .app-navi .nav-header .button img {
 	width: 20px;
 	height: 20px;
-	transition: 500ms ease-in-out;
+	transition: 300ms ease-in-out;
 }
 
 .app-navi .nav-header .button:hover {

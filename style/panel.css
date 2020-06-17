@@ -14,9 +14,15 @@
 	box-shadow: #00000033 2px 2px 3px;
 	z-index: 2;
 	overflow: hidden;
-	transition: 500ms ease-in-out;
+	transition: 300ms ease-in-out;
 }
 
 .app-panel .side-bar.active {
 	width: 300px;
+}
+
+.app-panel .body {
+	width: 100%;
+	height: 100%;
+	background: #fdfdfd;
 }
