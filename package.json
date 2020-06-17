@@ -4,7 +4,7 @@
   "description": "Project Score Table",
   "main": "app.js",
   "scripts": {
-    "start": "electron ."    
+    "start": "electron ."
   },
   "repository": {
     "type": "git",
@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/TeriaKatayoki/score-table#readme",
   "devDependencies": {
-    "electron": "^9.0.4"
+    "electron": "^9.0.4",
+    "jquery": "^3.5.1"
   }
 }

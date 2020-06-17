@@ -4,6 +4,7 @@
 	user-select: none;
 	outline: none;
 	overflow: hidden;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .flex {
@@ -21,6 +22,14 @@
 
 .f-space-b {
 	justify-content: space-between;
+}
+
+.f-start {
+	justify-content: flex-start;
+}
+
+.f-vertical {
+	flex-direction: column;
 }
 
 .body {

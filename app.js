@@ -1,6 +1,6 @@
 // app.js is app start entry point
 
-const { app, BrowserWindow, screen } = require('electron')
+const { app, BrowserWindow } = require('electron')
 const fs = require('fs')
 
 /**
@@ -9,28 +9,27 @@ const fs = require('fs')
  */ 
 let window
 
-
 /**
  * sharing variable in main process
  */
-global['shared'] = {
+global.shared = {
 	path: {
 		appData: app.getPath('appData'),
 		dirname: __dirname
 	}, 
 	invoke: {
-		firstUse: false
+		firstUse: false,
+		debug: function(msg) {console.log(msg)}
 	}
 }
 
 app.on('ready', () => {
-	// get primary screen properties
-	let primaryScreen = screen.getPrimaryDisplay()
+	preload()
 	// create main window
 	window = new BrowserWindow({
-		// height and width should be 80% compare to primary screen
-		width: primaryScreen.workArea.width * 80 / 100,
-		height: primaryScreen.workArea.height * 80 / 100,
+		// height and width
+		width: 1100,
+		height: 600,
 		// force min width and min height
 		minWidth: 500,
 		minHeight: 300,
@@ -57,7 +56,7 @@ app.on('ready', () => {
  *  - if first use, active signup screen
  */
 function preload() {
-	global['shared'].invoke.firstUse = checkFirstUse()
+	global.shared.invoke.firstUse = checkFirstUse()
 }
 
 
