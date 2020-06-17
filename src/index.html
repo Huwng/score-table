@@ -6,7 +6,6 @@
 	<link rel="stylesheet" href="../style/nav.css">
 	<link rel="stylesheet" href="../style/float-btn.css">
 	<link rel="stylesheet" href="../style/panel.css">
-	<script src="../script/template.js"></script>
 	<meta charset="UTF-8">
 	<title id="process-title"></title>
 </head>
@@ -51,9 +50,14 @@
 	<div class="app-panel flex f-center">
 		<div class="side-bar" id="app-sidebar"></div>
 		<div class="body" id="app-body">
-			
+
 		</div>
 	</div>
+	<script>
+		var remote = require('electron').remote
+		var shared = remote.getGlobal('shared')
+	</script>
+	<script src="../script/template.js"></script>
 	<script src="../script/index/prepaire.js"></script>
 	<script src="../script/index/navigation.js"></script>
 	<script src="../script/index/float-menu.js"></script>

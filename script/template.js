@@ -1,5 +1,3 @@
-const remote = require('electron').remote
-const shared = remote.getGlobal('shared')
 /**
  * select a document from document
  * @param {string} selector
@@ -25,7 +23,6 @@ function el_click(element, callback) {
 	element.addEventListener('click', callback)
 }
 
-
 /**
  * get remote of main process
  * @returns {Electron.Remote}
@@ -42,6 +39,10 @@ function getSharedvar() {
 	return shared
 }
 
+/**
+ * push a log to debug console
+ * @param {string} msg 
+ */
 function pushlog(msg) {
 	getSharedvar().invoke.debug(`---> ${msg}`)
 }
