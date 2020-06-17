@@ -11,7 +11,7 @@ function _$(selector) { return document.querySelector(selector) }
  * @returns {HTMLCollection}
  */
 function $$(selector) {
-	return document.querySelectorAll(selector)
+    return document.querySelectorAll(selector)
 }
 
 /**
@@ -20,7 +20,7 @@ function $$(selector) {
  * @param {function} callback 
  */
 function el_click(element, callback) {
-	element.addEventListener('click', callback)
+    element.addEventListener('click', callback)
 }
 
 /**
@@ -28,7 +28,7 @@ function el_click(element, callback) {
  * @returns {Electron.Remote}
  */
 function getRemote() {
-	return remote
+    return remote
 }
 
 /**
@@ -36,7 +36,7 @@ function getRemote() {
  * @returns {{path: {appData: string, dirname: string}, invoke: {firstUse: boolean, debug: function(string)}}}
  */
 function getSharedvar() {
-	return shared
+    return shared
 }
 
 /**
@@ -44,5 +44,5 @@ function getSharedvar() {
  * @param {string} msg 
  */
 function pushlog(msg) {
-	getSharedvar().invoke.debug(`---> ${msg}`)
+    getSharedvar().invoke.debug(`---> ${msg}`)
 }
