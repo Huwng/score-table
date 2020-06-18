@@ -14,6 +14,9 @@
         } catch (error) {
             console.log(error)
         }
+
+        // append file ${appdata}/Scoretable/user$.db
+
         // append Create table panel
 
         // set window title to ""
