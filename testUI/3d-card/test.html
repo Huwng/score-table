@@ -29,7 +29,7 @@
 				top: 50%;
 				left: 50%;
 				transform: translate(-50%, -50%);
-				transform-style: preserve-3d;
+				/* transform-style: preserve-3d; */
 				transition: 1000ms;
 				display: flex;
 				align-items: center;
@@ -56,14 +56,21 @@
 			let e1 = document.getElementById('el1')
 			let e2 = document.getElementById('el2')
 			let c = document.getElementById('card')
-			e1.addEventListener('click', () => {
-				console.log('el1 clicked')
+			e1.addEventListener('click', (e) => {
+				console.log('el1 clicked' + e.offsetX)
 				c.classList.add('active')
+			})
+			e1.addEventListener('mouseover', (e) => {
+				e1.style.transform = `rotateX(${e.offsetX}deg) roteteY(${e.offsetY}deg)`
+			})
+			e1.addEventListener('focusout', () => {
+				console.log('e1 focused out')
 			})
 			e2.addEventListener('click', () => {
 				console.log('el2 clicked')
 				c.classList.remove('active')
 			})
+			c.addEventListener('click', () => {console.log('card has been clicked')})
 		</script>
 	</body>
 </html>

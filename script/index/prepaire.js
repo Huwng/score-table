@@ -11,8 +11,8 @@
         // append file ${appdata}/Scoretable/user$.db
 
         // append Create table panel
-
-        // set window title to ""
-        setTitle()
+        showCreateTablePanel()
+        // set window title to "Create new table"
+        setTitle('Create new table')
     }
 }).call(this)

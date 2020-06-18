@@ -7,11 +7,13 @@
     <link rel="stylesheet" href="../style/float-btn.css">
     <link rel="stylesheet" href="../style/panel.css">
     <link rel="stylesheet" href="../style/login-screen.css">
+    <link rel="stylesheet" href="../style/create-table.css">
     <meta charset="UTF-8">
     <title id="process-title"></title>
 </head>
 
 <body>
+    <!--! App navigation -->
     <div class="app-navi">
         <div class="nav-header flex f-center">
             <div class="button flex f-center" id="app-morebtn">
@@ -31,33 +33,43 @@
             </div>
         </div>
     </div>
-
+    <!--! App option float button -->
     <div class="float-btn btn-option flex f-center" id="float-option-btn">
         <img src="../res/white-icon/settings.png" alt="">
     </div>
     <div class="float-menu float-option flex f-center f-vertical" id="float-option-menu">
         <span>
-			<div class="innerspan">Option 1</div>
-		</span>
+            <div class="innerspan">Option 1</div>
+        </span>
         <span>
-			<div class="innerspan">Option 2</div>
-		</span>
+            <div class="innerspan">Option 2</div>
+        </span>
         <span>
-			<div class="innerspan">Option 3</div>
-		</span>
+            <div class="innerspan">Option 3</div>
+        </span>
         <span>
-			<div class="innerspan">Option 4</div>
-		</span>
-    </div> 
-
+            <div class="innerspan">Option 4</div>
+        </span>
+    </div>
+    <!--! Menu will append when click to Close app button -->
     <div class="float-close" id="float-close">
         <div class="option yes flex f-start"><span>Close</span></div>
         <div class="option no flex f-start"><span>Cancel</span></div>
     </div>
-
-    <div class="app-panel flex f-center">
-        <div class="side-bar" id="app-sidebar"></div>
+    <!--! App main panel -->
+    <div class="app-panel flex f-start">
+        <!--! Left side bar -->
+        <div class="side-bar" id="app-sidebar">
+            <div class="side-bar-body">
+                <!-- Side bar body -->
+            </div>
+            <div class="side-bar-footer">
+                <!-- Side bar footer -->
+            </div>
+        </div>
+        <!--! Main body off application -->
         <div class="body" id="app-body">
+            <!--! Login screen -->
             <div id="login-screen" class="flex f-center">
                 <form action="login" class="flex f-space-a f-vertical">
                     <div class="form-title flex f-center">
@@ -67,15 +79,33 @@
                         <div class="label pass-lab"><span>Password</span></div>
                         <input type="password" id="inp-pass">
                     </div>
-                    <button id="smt-login">Login</button>
+                    <button id="smt-login">Submit</button>
                 </form>
+            </div>
+            <!--! New table screen -->
+            <div id="new-table-screen" class="flex f-center f-vertical">
+                <div class="table-name flex f-center">
+                    <span>Table name:</span>
+                    <input type="text">
+                </div>
+                <div class="subject-selection flex f-center f-vertical">
+                    <span><strong>Seclect subject</strong></span>
+                    <div class="subject-table">
+                        <table id="sbj-tab">
+                            <td></td>
+                        </table>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-
+    <!--! Script zone -->
     <script>
         var remote = require('electron').remote
         var shared = remote.getGlobal('shared')
+        function get_module(module) {
+            return require(`../script/${module}`)
+        }
     </script>
     <script src="../script/template.js"></script>
     <script src="../script/index/prepaire.js"></script>
