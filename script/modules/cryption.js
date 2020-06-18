@@ -1,7 +1,15 @@
+/**
+ * check whether password is true
+ * @param {string} password 
+ * @param {string} passcode 
+ */
 function checkPass(password, passcode) {
 	return SHA256(password) == passcode
 }
-
+/**
+ * hash code any string to SHA256
+ * @param {string} s string need to be hash
+ */
 function SHA256(s) {
 	var chrsz = 8;
 	var hexcase = 0;
@@ -99,4 +107,11 @@ function SHA256(s) {
 	}
 	s = Utf8Encode(s);
 	return binb2hex(core_sha256(str2binb(s), s.length * chrsz));
+}
+
+module.exports = {
+	/** hash function */
+	hash: SHA256,
+	/** check password function */
+	check: checkPass
 }
