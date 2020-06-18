@@ -1,7 +1,7 @@
 // app.js is app start entry point
 
 const { app, BrowserWindow } = require('electron')
-require('electron-reload')(__dirname)
+//require('electron-reload')(__dirname)
 const fs = require('fs')
 
 /**

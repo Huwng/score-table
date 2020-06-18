@@ -66,3 +66,11 @@ function calcrewards() {
                  }
     return rewards                 
 }
+
+module.exports = {
+    read: tablereader,
+    write: tablewriter,
+    avgmarks: calcavgmarks,
+    Totalavgmarks: calcTotalavg,
+    rewards: calcrewards,
+}
