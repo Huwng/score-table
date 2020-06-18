@@ -19,5 +19,8 @@
   "devDependencies": {
     "electron": "^9.0.4",
     "jquery": "^3.5.1"
+  },
+  "dependencies": {
+    "electron-reload": "^1.5.0"
   }
 }

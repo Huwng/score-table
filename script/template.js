@@ -46,3 +46,18 @@ function getSharedvar() {
 function pushlog(msg) {
     getSharedvar().invoke.debug(`---> ${msg}`)
 }
+
+/**
+ * action should be done before application to quit
+ */
+function beforeQuit() {
+    getSharedvar().invoke.debug('app is ready to quit')
+}
+
+function appendFloatButton() {
+    _$('#float-option-btn').classList.add('active')
+}
+
+function setTitle(title = "") {
+    _$('#app-title').innerHTML = title
+} 

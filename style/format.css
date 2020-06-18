@@ -32,7 +32,15 @@
     flex-direction: column;
 }
 
+.app-panel {
+    width: 100vw;
+    height: 100vh;
+    background: #f0f0f0;
+    border-radius: 15px;
+}
+
 .body {
     width: 100vw;
     height: 100vh;
+    background: #f0f0f0;
 }

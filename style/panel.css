@@ -10,15 +10,18 @@
 .app-panel .side-bar {
 	width: 0;
 	height: 100vh;
-	background: #0000ffdd;
-	box-shadow: #00000033 2px 2px 3px;
+	background: #2974ff;
+	box-shadow: #2974ff33 2px 2px 3px;
 	z-index: 2;
 	overflow: hidden;
 	transition: 300ms ease-in-out;
+	border-radius: 15px;
+	transform: translateY(-100%);
 }
 
 .app-panel .side-bar.active {
 	width: 300px;
+	transform: translateY(0);
 }
 
 .app-panel .body {

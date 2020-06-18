@@ -1,6 +1,7 @@
 // app.js is app start entry point
 
 const { app, BrowserWindow } = require('electron')
+require('electron-reload')(__dirname)
 const fs = require('fs')
 
 /**
@@ -25,7 +26,7 @@ global.shared = {
 
 app.on('ready', () => {
     preload()
-        // create main window
+        // create main window 
     window = new BrowserWindow({
             // height and width
             width: 1100,
@@ -42,7 +43,9 @@ app.on('ready', () => {
             // window should be shown after it ready
             show: false,
             // make window framelessly
-            frame: false
+            frame: false,
+            // make window transparent
+            transparent: true
         })
         // fetch index.html to main window
     window.loadURL(`file:///${__dirname}/src/index.html`)
