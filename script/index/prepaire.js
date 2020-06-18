@@ -7,5 +7,6 @@
 	if (shared_var.invoke.firstUse) {
 		// append sign up screen
 		console.log('this is first use')
+		fs.mkdirSync(`${shared_var.path.appData}/ScoreTable`)
 	}
 }).call(this)
