@@ -1,0 +1,51 @@
+#login-screen {
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+    transition: 300ms;
+    opacity: 0;
+    transform: translateX(100px);
+    position: absolute;
+}
+
+#login-screen.active {
+    visibility: visible;
+    transform: translateX(0);
+    opacity: 1;
+}
+
+#login-screen form {
+    width: 350px;
+    height: 170px;
+    box-shadow: #22222222 2px 2px 3px, #ffffffff -2px -2px 3px;
+    border-radius: 10px;
+}
+
+#login-screen form .card {
+    width: 100%;
+}
+
+#login-screen form .card .label {
+    width: 90%;
+    font-size: 0.7em;
+}
+
+#login-screen form .card input {
+    width: 90%;
+    height: 30px;
+    border: none;
+    border-radius: 10px;
+    text-align: center;
+    background: #00000000;
+    box-shadow: inset #22222222 2px 2px 3px, inset #ffffffff -2px -2px 3px;
+}
+
+#smt-login {
+    width: 60px;
+    height: 30px;
+    background: #00000000;
+    box-shadow: #22222222 2px 2px 3px, #ffffffff -2px -2px 3px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+}

@@ -1,0 +1,148 @@
+.float-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 40px;
+    position: absolute;
+    bottom: 10px;
+    right: -100px;
+    box-shadow: #00000044 2px 2px 3px;
+    background: #0000ffdd;
+    transition: 300ms ease-in-out;
+    transform: rotate(180deg);
+    z-index: 4;
+}
+
+.float-btn:hover,
+.float-btn.active {
+    right: 15px;
+    transform: rotate(0);
+}
+
+.float-btn img {
+    width: 30px;
+    height: 30px;
+    transition: 300ms ease-in-out;
+}
+
+.float-btn.active img {
+    transform: rotate(360deg);
+}
+
+.float-menu {
+    width: 200px;
+    height: auto;
+    position: absolute;
+    bottom: 60px;
+    right: 20px;
+    overflow: visible;
+    visibility: hidden;
+    opacity: 0;
+    transition: 300ms ease-in-out;
+    z-index: 4;
+}
+
+.float-menu.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+.float-menu span {
+    width: 100%;
+    padding: 5px;
+    margin-top: 10px;
+    border-radius: 30px;
+    box-shadow: #00000044 2px 2px 3px, #00000044 -2px -2px 3px;
+    transform: translateX(100%);
+    transition: 300ms ease-in-out;
+}
+
+.float-menu span .innerspan {
+    opacity: 0.5;
+    transition: 300ms ease-in-out;
+}
+
+.float-menu span:hover .innerspan {
+    opacity: 1;
+}
+
+.float-menu.active span {
+    transform: translateX(0);
+}
+
+.float-menu span:nth-child(1) {
+    transition-delay: 0ms;
+}
+
+.float-menu span:nth-child(2) {
+    transition-delay: 50ms;
+}
+
+.float-menu span:nth-child(3) {
+    transition-delay: 100ms;
+}
+
+.float-menu span:nth-child(4) {
+    transition-delay: 150ms;
+}
+
+.float-close {
+    width: 200px;
+    height: 100px;
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    z-index: 100;
+    overflow: visible;
+    visibility: hidden;
+    opacity: 0;
+    transition: 400ms;
+}
+
+.float-close.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+.float-close .option {
+    width: 100%;
+    padding: 5px;
+    margin-top: 10px;
+    border-radius: 20px;
+    box-shadow: #00000044 2px 2px 3px, #00000044 -2px -2px 3px;
+    transform: translateY(-100%);
+    transition: 400ms;
+    background-color: #ffffff;
+}
+
+.float-close .option span {
+    opacity: 0.6;
+    transition: 400ms;
+}
+
+.float-close .option.yes:hover {
+    background: #ff0000;
+}
+
+.float-close .option:hover span {
+    opacity: 1;
+}
+
+.float-close .option:nth-child(1) {
+    transition-delay: 0ms;
+}
+
+.float-close .option:nth-child(2) {
+    transition-delay: 50ms;
+}
+
+.float-close.active .option:nth-child(1) {
+    transition-delay: 50ms;
+}
+
+.float-close.active .option:nth-child(2) {
+    transition-delay: 0ms;
+}
+
+.float-close.active .option {
+    transform: translateX(0);
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="../style/format.css">
+    <link rel="stylesheet" href="../style/nav.css">
+    <link rel="stylesheet" href="../style/float-btn.css">
+    <link rel="stylesheet" href="../style/panel.css">
+    <link rel="stylesheet" href="../style/login-screen.css">
+    <meta charset="UTF-8">
+    <title id="process-title"></title>
+</head>
+
+<body>
+    <div class="app-navi">
+        <div class="nav-header flex f-center">
+            <div class="button flex f-center" id="app-morebtn">
+                <img class="btn-img" src="../res/black-icon/more.png" alt="">
+            </div>
+            <div class="title flex f-start" id="app-title">
+                <label for="app-title">This is title</label>
+            </div>
+            <div class="button flex f-center" id="app-minimize">
+                <img src="../res/black-icon//minimize.png" alt="" class="btn-img">
+            </div>
+            <div class="button flex f-center" id="app-maximize">
+                <img src="../res/black-icon//maximize.png" alt="" class="btn-img">
+            </div>
+            <div class="button flex f-center" id="app-close">
+                <img src="../res/black-icon/close.png" alt="" class="btn-img">
+            </div>
+        </div>
+    </div>
+
+    <div class="float-btn btn-option flex f-center" id="float-option-btn">
+        <img src="../res/white-icon/settings.png" alt="">
+    </div>
+    <div class="float-menu float-option flex f-center f-vertical" id="float-option-menu">
+        <span>
+			<div class="innerspan">Option 1</div>
+		</span>
+        <span>
+			<div class="innerspan">Option 2</div>
+		</span>
+        <span>
+			<div class="innerspan">Option 3</div>
+		</span>
+        <span>
+			<div class="innerspan">Option 4</div>
+		</span>
+    </div> 
+
+    <div class="float-close" id="float-close">
+        <div class="option yes flex f-start"><span>Close</span></div>
+        <div class="option no flex f-start"><span>Cancel</span></div>
+    </div>
+
+    <div class="app-panel flex f-center">
+        <div class="side-bar" id="app-sidebar"></div>
+        <div class="body" id="app-body">
+            <div id="login-screen" class="flex f-center">
+                <form action="login" class="flex f-space-a f-vertical">
+                    <div class="form-title flex f-center">
+                        <span id="login-title">Login</span>
+                    </div>
+                    <div class="card pass-form flex f-center f-vertical">
+                        <div class="label pass-lab"><span>Password</span></div>
+                        <input type="password" id="inp-pass">
+                    </div>
+                    <button id="smt-login">Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var remote = require('electron').remote
+        var shared = remote.getGlobal('shared')
+    </script>
+    <script src="../script/template.js"></script>
+    <script src="../script/index/prepaire.js"></script>
+    <script src="../script/index/navigation.js"></script>
+    <script src="../script/index/float-menu.js"></script>
+</body>
+
+</html>

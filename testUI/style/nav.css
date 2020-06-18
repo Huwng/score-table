@@ -1,0 +1,46 @@
+.app-navi {
+	position: absolute;
+	width: 100%;
+	height: 30px;
+	z-index: 3;
+	background: #2974ff;
+	box-shadow: #2974ff33 2px 2px 3px;
+	border-radius: 15px;
+
+}
+
+.app-navi .nav-header {
+	width: 100vw;
+	height: 30px;
+}
+
+.app-navi .nav-header .button {
+	width: 35px;
+	height: 30px;
+}
+
+.app-navi .nav-header .title {
+	width: 100%;
+	height: 30px;
+	margin-left: 10px;
+	transition: 300ms ease-in-out;
+	-webkit-app-region: drag;
+}
+
+.app-navi .nav-header .button img {
+	width: 20px;
+	height: 20px;
+	transition: 300ms ease-in-out;
+}
+
+.app-navi .nav-header .button:hover {
+	background: #00000011;
+}
+
+#app-close:hover {
+	background: #ff0000;
+}
+
+.active#app-morebtn img {
+	transform: rotate(270deg);
+}
