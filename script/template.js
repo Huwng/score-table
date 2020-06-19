@@ -82,6 +82,49 @@ function setOptionFloatMenu(template) {
 }
 
 /**
+ * action should be done before application to quit
+ */
+function beforeQuit() {
+    getSharedvar().invoke.debug('app is ready to quit')
+}
+
+function showLoginScreen() {
+    _$('#login-screen').classList.add('active')
+}
+
+function hideLoginScreen() {
+    _$('#login-screen').classList.remove('active')
+}
+
+function showFloatAddSubject() {
+    _$('#float-add-subject').classList.add('active')
+}
+
+function hideFloatAddSubject() {
+    _$('#float-add-subject').classList.remove('active')
+}
+
+function showFloatButton() {
+    _$('#float-option-btn').classList.remove('hidden')
+}
+
+function hideFloatButton() {
+    _$('#float-option-btn').classList.add('hidden')
+}
+
+/**
+ * push a notification popup to screen
+ * @param {string} message 
+ */
+function showNotification(message) {
+    _$('#notification').children[0].innerHTML = message
+    _$('#notification').classList.add('active')
+    pushlog(message)
+    setTimeout(() => {_$('#notification').classList.remove('active')}, 6000)
+}
+
+
+/**
  * load template array of subject, append them to subject select table
  * @param {HTMLElement} table
  * @param {Array<string>} template 
@@ -102,40 +145,4 @@ function loadSubjectTemplate(table, template) {
         trow.appendChild(tcel)
         table.appendChild(trow)
     }
-}
-
-/**
- * action should be done before application to quit
- */
-function beforeQuit() {
-    getSharedvar().invoke.debug('app is ready to quit')
-}
-
-function showLoginScreen() {
-    _$('#login-screen').classList.add('active')
-}
-
-function hideLoginScreen() {
-    _$('#login-screen').classList.remove('active')
-}
-
-function showFloatButton() {
-    _$('#float-option-btn').classList.remove('hidden')
-}
-
-function hideFloatButton() {
-    _$('#float-option-btn').classList.add('hidden')
-}
-
-function showCreateTablePanel() {
-    loadSubjectTemplate(_$('#sbj-tab').children[0], get_module('index/table').template)
-    setOptionFloatMenu(get_module('modules/float-menu/new-table'))
-    showFloatButton()
-}
-
-function showNotification(message) {
-    _$('#notification').children[0].innerHTML = message
-    _$('#notification').classList.add('active')
-    pushlog(message)
-    setTimeout(() => {_$('#notification').classList.remove('active')}, 6000)
 }

@@ -20,7 +20,7 @@
                 <img class="btn-img" src="../res/black-icon/more.png" alt="">
             </div>
             <div class="title flex f-start" id="app-title">
-                <label for="app-title">This is title</label>
+                <label for="app-title">Score Table v0.0-dev</label>
             </div>
             <div class="button flex f-center" id="app-minimize">
                 <img src="../res/black-icon//minimize.png" alt="" class="btn-img">
@@ -60,6 +60,17 @@
     <div id="notification" class="noti flex f-center">
         <span></span>
     </div>
+    <!--! New subject float popup -->
+    <div id="float-add-subject" class="flex f-space-a f-vertical">
+        <div class="header" class="flex f-center">
+            <span>Enter Subject Name:</span>
+        </div>
+        <input type="text" id="float-add-subject-inp">
+        <div class="button">
+            <button id="confirm-add-subject">Add</button>
+            <button id="cancel-add-subject">Cancel</button>
+        </div>
+    </div>
     <!--! App main panel -->
     <div class="app-panel flex f-start">
         <!--! Left side bar -->
@@ -75,7 +86,7 @@
         <div class="body" id="app-body">
             <!--! Login screen -->
             <div id="login-screen" class="flex f-center">
-                <form action="login" class="flex f-space-a f-vertical">
+                <div class="login flex f-space-a f-vertical">
                     <div class="form-title flex f-center">
                         <span id="login-title">Login</span>
                     </div>
@@ -84,7 +95,7 @@
                         <input type="password" id="inp-pass">
                     </div>
                     <button id="smt-login">Submit</button>
-                </form>
+                </div>
             </div>
             <!--! New table screen -->
             <div id="new-table-screen" class="flex f-center f-vertical">
@@ -116,6 +127,7 @@
     <script src="../script/index/prepaire.js"></script>
     <script src="../script/index/navigation.js"></script>
     <script src="../script/index/float-menu.js"></script>
+    <script src="../script/index/login-screen.js"></script>
 </body>
 
 </html>

@@ -14,23 +14,23 @@
     opacity: 1;
 }
 
-#login-screen form {
+#login-screen .login {
     width: 350px;
     height: 170px;
     box-shadow: #22222222 2px 2px 3px, #ffffffff -2px -2px 3px;
     border-radius: 10px;
 }
 
-#login-screen form .card {
+#login-screen .login .card {
     width: 100%;
 }
 
-#login-screen form .card .label {
+#login-screen .login .card .label {
     width: 90%;
     font-size: 0.7em;
 }
 
-#login-screen form .card input {
+#login-screen .login .card input {
     width: 90%;
     height: 30px;
     border: none;
@@ -48,4 +48,8 @@
     border: none;
     outline: none;
     border-radius: 10px;
+}
+
+#smt-login:active {
+    box-shadow: #22222222 2px 2px 3px inset, #ffffffff -2px -2px 3px inset;
 }

@@ -16,12 +16,21 @@ module.exports = [
 	{
 		label: "Add Subject",
 		callback: function() {
-			showNotification('This feature is not supported now')
+			// showNotification('This feature is not supported now')
+			showFloatAddSubject()
+			_$('#float-add-subject-inp').value = ''
 			_$('#float-option-btn').click()
 		}
 	},
 	{
 		label: "Import Subject data",
+		callback: function() {
+			showNotification('This feature is not supported now')
+			_$('#float-option-btn').click()
+		}
+	},
+	{
+		label: "Preference",
 		callback: function() {
 			showNotification('This feature is not supported now')
 			_$('#float-option-btn').click()
