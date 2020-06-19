@@ -56,6 +56,10 @@
         <div class="option yes flex f-start"><span>Close</span></div>
         <div class="option no flex f-start"><span>Cancel</span></div>
     </div>
+    <!--! Local App notification -->
+    <div id="notification" class="noti flex f-center">
+        <span></span>
+    </div>
     <!--! App main panel -->
     <div class="app-panel flex f-start">
         <!--! Left side bar -->
@@ -92,7 +96,7 @@
                     <span><strong>Seclect subject</strong></span>
                     <div class="subject-table">
                         <table id="sbj-tab">
-                            <td></td>
+                            <tbody></tbody>
                         </table>
                     </div>
                 </div>
@@ -103,6 +107,7 @@
     <script>
         var remote = require('electron').remote
         var shared = remote.getGlobal('shared')
+        var fsmodule = require('fs')
         function get_module(module) {
             return require(`../script/${module}`)
         }

@@ -33,6 +33,14 @@ function getRemote() {
 }
 
 /**
+ * return an fs module
+ * @returns {typeof import "fs"}
+ */
+function getFS() {
+    return fsmodule
+}
+
+/**
  * shared variable from main process
  * @returns {{path: {appData: string, dirname: string}, invoke: {firstUse: boolean, debug: function(string)}}}
  */
@@ -75,11 +83,24 @@ function setOptionFloatMenu(template) {
 
 /**
  * load template array of subject, append them to subject select table
+ * @param {HTMLElement} table
  * @param {Array<string>} template 
  */
-function loadSubjectTemplate(template) {
+function loadSubjectTemplate(table, template) {
+    table.innerHTML = ''
     for (let i = 0; i < template.length; ++i) {
-        let tr
+        let trow = document.createElement('tr')
+        let tcel = document.createElement('td')
+        tcel.className = 'flex f-space-a'
+        let checkbox = document.createElement('input')
+        checkbox.type = 'checkbox'
+        checkbox.click()
+        let span = document.createElement('span')
+        span.innerText = template[i]
+        tcel.appendChild(checkbox)
+        tcel.appendChild(span)
+        trow.appendChild(tcel)
+        table.appendChild(trow)
     }
 }
 
@@ -107,6 +128,14 @@ function hideFloatButton() {
 }
 
 function showCreateTablePanel() {
+    loadSubjectTemplate(_$('#sbj-tab').children[0], get_module('index/table').template)
     setOptionFloatMenu(get_module('modules/float-menu/new-table'))
     showFloatButton()
+}
+
+function showNotification(message) {
+    _$('#notification').children[0].innerHTML = message
+    _$('#notification').classList.add('active')
+    pushlog(message)
+    setTimeout(() => {_$('#notification').classList.remove('active')}, 6000)
 }
