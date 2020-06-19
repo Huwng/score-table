@@ -4,12 +4,15 @@
     border-radius: 40px;
     position: absolute;
     bottom: 10px;
-    right: -100px;
+    right: 10px;
     box-shadow: #00000044 2px 2px 3px;
     background: #0000ffdd;
     transition: 300ms ease-in-out;
-    transform: rotate(180deg);
     z-index: 4;
+}
+
+.float-btn.hidden {
+    right: -100px;
 }
 
 .float-btn:hover,

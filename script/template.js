@@ -5,6 +5,7 @@
  */
 function _$(selector) { return document.querySelector(selector) }
 
+
 /**
  * select all element with specific selector
  * @param {string} selector 
@@ -48,16 +49,64 @@ function pushlog(msg) {
 }
 
 /**
+ * set Window title in navigation bar
+ * @param {string} title 
+ */
+function setTitle(title = "") {
+    _$('#app-title').innerHTML = title
+} 
+
+/**
+ * set option float menu with template
+ * @param {Array<{label: string, callback: function}>} template 
+ */
+function setOptionFloatMenu(template) {
+    _$('#float-option-menu').innerHTML = ''
+    for (let i = 0; i < template.length; ++i) {
+        let span = document.createElement('span')
+        let inner = document.createElement('div')
+        inner.classList.add('innerspan')
+        inner.innerHTML = template[i].label
+        span.appendChild(inner)
+        span.addEventListener('click', template[i].callback)
+        _$('#float-option-menu').appendChild(span)
+    }
+}
+
+/**
+ * load template array of subject, append them to subject select table
+ * @param {Array<string>} template 
+ */
+function loadSubjectTemplate(template) {
+    for (let i = 0; i < template.length; ++i) {
+        let tr
+    }
+}
+
+/**
  * action should be done before application to quit
  */
 function beforeQuit() {
     getSharedvar().invoke.debug('app is ready to quit')
 }
 
-function appendFloatButton() {
-    _$('#float-option-btn').classList.add('active')
+function showLoginScreen() {
+    _$('#login-screen').classList.add('active')
 }
 
-function setTitle(title = "") {
-    _$('#app-title').innerHTML = title
-} 
+function hideLoginScreen() {
+    _$('#login-screen').classList.remove('active')
+}
+
+function showFloatButton() {
+    _$('#float-option-btn').classList.remove('hidden')
+}
+
+function hideFloatButton() {
+    _$('#float-option-btn').classList.add('hidden')
+}
+
+function showCreateTablePanel() {
+    setOptionFloatMenu(get_module('modules/float-menu/new-table'))
+    showFloatButton()
+}

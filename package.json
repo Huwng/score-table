@@ -18,9 +18,8 @@
   "homepage": "https://github.com/TeriaKatayoki/score-table#readme",
   "devDependencies": {
     "electron": "^9.0.4",
+    "electron-reload": "^1.5.0",
     "jquery": "^3.5.1"
   },
-  "dependencies": {
-    "electron-reload": "^1.5.0"
-  }
+  "dependencies": {}
 }

@@ -17,6 +17,7 @@
 	transition: 300ms ease-in-out;
 	border-radius: 15px;
 	transform: translateY(-100%);
+	position: absolute;
 }
 
 .app-panel .side-bar.active {
@@ -27,5 +28,5 @@
 .app-panel .body {
 	width: 100%;
 	height: 100%;
-	background: #fdfdfd;
+	background: #f0f0f0;
 }
