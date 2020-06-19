@@ -5,14 +5,20 @@
     let btn_more = _$('#app-morebtn')
     let sidebar = _$('#app-sidebar')
     el_click(btn_more, function () {
-        if (btn_more.classList.contains('active')) {
-            btn_more.classList.remove('active')
-            sidebar.classList.remove('active')
-        } else {
-            btn_more.classList.add('active')
-            sidebar.classList.add('active')
+        if (btn_more.classList.contains('activable')) {
+            if (btn_more.classList.contains('active')) {
+                btn_more.classList.remove('active')
+                sidebar.classList.remove('active')
+            } else {
+                btn_more.classList.add('active')
+                sidebar.classList.add('active')
+            }
         }
     })
+    btn_more.setActivable = (activable) => {
+        if (activable) btn_more.classList.add('activable')
+        else btn_more.classList.remove('activable')
+    }
     // handle button minimize
     let btn_close = _$('#app-close')
     el_click(btn_close, function () {
@@ -35,11 +41,11 @@
         }
     })
     // handle float close menu
-    el_click(_$('#float-close').children[0], function() {
+    el_click(_$('#float-close').children[0], function () {
         beforeQuit()
         remote.app.quit()
     })
-    el_click(_$('#float-close').children[1], function() {
+    el_click(_$('#float-close').children[1], function () {
         _$('#float-close').classList.remove('active')
     })
 }).call(this)
