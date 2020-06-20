@@ -6,7 +6,7 @@ function tablereader() {
 /** write the data back to "Table.json" */
 function tablewriter(data) {
     fs.writeFileSync(`${shared_var.path.appData}/ScoreTable/Table.json`, data)
-    console.log("write success")
+    pushlog("write success")
 }
 
 function calcavgmarks(name) {

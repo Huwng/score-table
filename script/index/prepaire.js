@@ -35,7 +35,15 @@
         setTitle('Create new table')
     } else {
         hideFloatButton()
-        showLoginScreen()
+        /** @type {{'admin', 'user'}} */
+        let userdata
+        try {
+            userdata = JSON.parse(fs.readFileSync(`${shared_var.path.appData}/ScoreTable/user$.db`, { encoding: 'utf8' }))
+            console.log(userdata)
+        } catch (err) {
+            showNotification('' + err)
+        }
+        showLoginScreen(userdata.admin, userdata.user)
     }
 
     //! FUNCTION zone

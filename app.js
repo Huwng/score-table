@@ -20,7 +20,7 @@ global.shared = {
     },
     invoke: {
         firstUse: false,
-        debug: function(msg) { console.log(msg) }
+        debug: function(msg) { console.log(msg) },
     }
 }
 
@@ -38,7 +38,8 @@ app.on('ready', () => {
             webPreferences: {
                 nodeIntegration: true,
                 enableRemoteModule: true,
-                spellcheck: false
+                spellcheck: false,
+                devTools: true
             },
             // window should be shown after it ready
             show: false,

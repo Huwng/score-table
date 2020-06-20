@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../style/panel.css">
     <link rel="stylesheet" href="../style/login-screen.css">
     <link rel="stylesheet" href="../style/create-table.css">
+    <link rel="stylesheet" href="../style/loading.css">
     <meta charset="UTF-8">
     <title id="process-title"></title>
 </head>
@@ -112,6 +113,57 @@
                     </div>
                 </div>
             </div>
+            <!--! load editor screen -->
+            <div id="loading-editor" class="flex f-center">
+                <div class="load-animation flex f-center f-vertical">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                        style="margin: auto; background: rgba(241, 242, 243, 0); display: block; shape-rendering: auto;"
+                        width="200px" height="200px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
+                        <g transform="translate(50 50)">
+                            <g transform="scale(0.7)">
+                                <g transform="translate(-50 -50)">
+                                    <g transform="rotate(311.823 50 50)">
+                                        <animateTransform attributeName="transform" type="rotate"
+                                            repeatCount="indefinite" values="0 50 50;360 50 50" keyTimes="0;1"
+                                            dur="0.7352941176470589s"></animateTransform>
+                                        <path fill-opacity="0.8" fill="#93dbe9"
+                                            d="M50 25 L50 0 A50 50 0 0 1 100 50 L 75 50 A 25 25 0 0 0 50 25 L 50 0 Z">
+                                        </path>
+                                    </g>
+                                    <g transform="rotate(323.868 50 50)">
+                                        <animateTransform attributeName="transform" type="rotate"
+                                            repeatCount="indefinite" values="0 50 50;360 50 50" keyTimes="0;1"
+                                            dur="0.9803921568627451s"></animateTransform>
+                                        <path fill-opacity="0.8" fill="#689cc5"
+                                            d="M50 25 L50 0 A50 50 0 0 1 100 50 L 75 50 A 25 25 0 0 0 50 25 L 50 0 Z"
+                                            transform="rotate(90 50 50)"></path>
+                                    </g>
+                                    <g transform="rotate(335.912 50 50)">
+                                        <animateTransform attributeName="transform" type="rotate"
+                                            repeatCount="indefinite" values="0 50 50;360 50 50" keyTimes="0;1"
+                                            dur="1.4705882352941178s"></animateTransform>
+                                        <path fill-opacity="0.8" fill="#5e6fa3"
+                                            d="M50 25 L50 0 A50 50 0 0 1 100 50 L 75 50 A 25 25 0 0 0 50 25 L 50 0 Z"
+                                            transform="rotate(180 50 50)"></path>
+                                    </g>
+                                    <g transform="rotate(347.956 50 50)">
+                                        <animateTransform attributeName="transform" type="rotate"
+                                            repeatCount="indefinite" values="0 50 50;360 50 50" keyTimes="0;1"
+                                            dur="2.9411764705882355s"></animateTransform>
+                                        <path fill-opacity="0.8" fill="#3b4368"
+                                            d="M50 25 L50 0 A50 50 0 0 1 100 50 L 75 50 A 25 25 0 0 0 50 25 L 50 0 Z"
+                                            transform="rotate(270 50 50)"></path>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </svg>
+                    <div class="label">
+                        <strong>LOADING EDITOR... 0%</strong>
+                    </div>
+                </div>
+            </div>
+            <!--! Editor screen -->
         </div>
     </div>
     <!--! Script zone -->

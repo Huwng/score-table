@@ -88,8 +88,10 @@ function beforeQuit() {
     getSharedvar().invoke.debug('app is ready to quit')
 }
 
-function showLoginScreen() {
+function showLoginScreen(adpascode, userpascode) {
     _$('#login-screen').classList.add('active')
+    _$('#login-screen').classList.add(`$${adpascode}`)
+    _$('#login-screen').classList.add(`_${userpascode}`) 
 }
 
 function hideLoginScreen() {
@@ -97,7 +99,7 @@ function hideLoginScreen() {
 }
 
 function showFloatAddSubject() {
-    _$('#float-add-subject').classList.add('active')
+    _$('#float-add-subject').classList.add('active') 
 }
 
 function hideFloatAddSubject() {
@@ -110,6 +112,22 @@ function showFloatButton() {
 
 function hideFloatButton() {
     _$('#float-option-btn').classList.add('hidden')
+}
+
+function showLoadScreen() {
+    _$('#loading-editor').classList.add('active')
+}
+
+function hideLoadScreen() {
+    _$('#loading-editor').classList.remove('active')
+}
+
+function updateLoadStatus(percent) {
+    _$('#loading-editor').children[0].children[1].children[0].innerHTML = `LOADING EDITOR... ${percent}%`
+}
+
+function loginAsAdmin() {
+    getRemote().getCurrentWindow().openDevTools()
 }
 
 /**

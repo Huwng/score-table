@@ -2,7 +2,9 @@ module.exports = [
 	{
 		label: "Confirm",
 		callback: function() {
-			showNotification('This feature is not supported now')
+			showNotification('Create new user successfully')
+			showLoadScreen()
+			hideFloatButton()
 			_$('#float-option-btn').click()
 		}
 	}, 

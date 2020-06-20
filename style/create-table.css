@@ -5,6 +5,7 @@
 	opacity: 0;
 	transform: translateY(-100px);
 	transition: 400ms;
+	position: absolute;
 }
 
 #new-table-screen.active {
