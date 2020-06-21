@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../style/login-screen.css">
     <link rel="stylesheet" href="../style/create-table.css">
     <link rel="stylesheet" href="../style/loading.css">
+    <link rel="stylesheet" href="../style/editor.css">
     <meta charset="UTF-8">
     <title id="process-title"></title>
 </head>
@@ -102,7 +103,7 @@
             <div id="new-table-screen" class="flex f-center f-vertical">
                 <div class="table-name flex f-center">
                     <span>Table name:</span>
-                    <input type="text">
+                    <input type="text" id="get-table-name">
                 </div>
                 <div class="subject-selection flex f-center f-vertical">
                     <span><strong>Seclect subject</strong></span>
@@ -164,6 +165,39 @@
                 </div>
             </div>
             <!--! Editor screen -->
+            <div id="editor">
+                <div class="header flex f-center">
+                    <div class="subject flex f-center">
+                        <label>Subject</label>
+                    </div>
+                    <div class="editable-marks">
+                        <div class="marks-def m-header flex f-center">
+                            <label>Editable Marks</label>
+                        </div>
+                        <div class="marks-def m-body flex f-center">
+                            <div class="marks type1 flex f-center">
+                                <label>Type 1</label>
+                            </div>
+                            <div class="marks type2 flex f-center">
+                                <label>Type 2</label>
+                            </div>
+                            <div class="marks type3 flex f-center">
+                                <label>Type 3</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="avg-marks flex f-center">
+                        <label>AVG</label>
+                    </div>
+                </div>
+                <div class="table">
+                    <table id="editor-table">
+                        <div id="element-slider" class=""></div>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     </div>
     <!--! Script zone -->
@@ -171,6 +205,7 @@
         var remote = require('electron').remote
         var shared = remote.getGlobal('shared')
         var fsmodule = require('fs')
+        var edit_mode = false
         function get_module(module) {
             return require(`../script/${module}`)
         }
@@ -180,6 +215,7 @@
     <script src="../script/index/navigation.js"></script>
     <script src="../script/index/float-menu.js"></script>
     <script src="../script/index/login-screen.js"></script>
+    <script src="../script/index/editor.js"></script>
 </body>
 
 </html>

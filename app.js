@@ -52,6 +52,7 @@ app.on('ready', () => {
     window.loadURL(`file:///${__dirname}/src/index.html`)
         // when window is ready, show it
     window.once('ready-to-show', window.show)
+    window.webContents.openDevTools()
 })
 
 /**

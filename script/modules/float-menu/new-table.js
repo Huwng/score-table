@@ -4,6 +4,8 @@ module.exports = [
 		callback: function() {
 			showNotification('Create new user successfully')
 			showLoadScreen()
+			callCreate()
+			updateLoadStatus(100)
 			hideFloatButton()
 			_$('#float-option-btn').click()
 		}

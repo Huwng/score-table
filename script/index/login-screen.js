@@ -8,7 +8,7 @@
 		showNotification('UNINDENTIFIED USER')
 		usercode = get_module('modules/cryption').hash('')
 	}
-	console.log(admincode)
+	// console.log(admincode)
 	el_click(_$('#smt-login'), function () {
 		// showNotification('Login temporarily unable')
 		if (get_module('modules/cryption').check(_$('#inp-pass').value, admincode)) {

@@ -1,0 +1,135 @@
+#editor {
+	width: 100vw;
+	height: calc(100vh - 30px);
+	position: absolute;
+	visibility: hidden;
+	opacity: 0;
+	bottom: -100px;
+	left: 0px;
+	background: #f5f5f5;
+}
+
+#editor.active {
+	bottom: 0px;
+	visibility: visible;
+	opacity: 1;
+}
+
+/* #editor div {
+	border:  #333333 1px solid;
+} */
+
+#editor .header {
+	width: 100%;
+	height: 60px;
+	margin-bottom: 2px;
+}
+
+#editor .header .subject {
+	width: 25%;
+	height: 60px;
+	border-bottom: #d5d5d5 3px solid;
+}
+
+#editor .header .editable-marks {
+	width: 65%;
+	height: 60px;
+	border-bottom: #d5d5d5 3px solid;
+}
+
+#editor .header .avg-marks {
+	width: 10%;
+	height: 60px;
+	border-bottom: #d5d5d5 3px solid;
+	border-left: #d5d5d5 1px solid;
+}
+
+#editor .header .editable-marks .marks-def {
+	width: 100%;
+	height: 30px;
+	border-bottom: #d5d5d5 1px solid;
+	border-left: #d5d5d5 1px solid;
+}
+#editor .header .editable-marks .marks-def.m-body .marks {
+	width: 33.33%;
+}
+
+#editor .header .editable-marks .marks-def.m-body .marks:not(:first-child) {
+	border-left: #d5d5d5 1px solid;
+}
+
+#editor .table {
+	width: 100vw;
+	height: calc(100% - 60px);
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+#editor .table::-webkit-scrollbar {
+	width: 0px;
+}
+
+#editor table {
+	width: 100vw;
+	height: auto;
+	transform: translateY(-30px);
+	overflow: visible;
+}
+
+#editor table tbody {
+	width: 100%;
+	height: 100%;
+}
+
+#editor table tbody tr {
+	width: 100%;
+	height: 30px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-bottom: #d5d5d5 1px solid;
+}
+#editor table tbody tr td {
+	padding-top: 10px;
+	border-radius: 5px;
+}
+#editor table tbody tr td:not(:first-child) div {
+	border-left: #d5d5d5 1px solid;
+	height: 20px;
+}
+
+#editor table tbody tr td:nth-child(1) {
+	width: 25%;
+	height: 30px;
+}
+
+#editor table tbody tr td:nth-child(2),
+#editor table tbody tr td:nth-child(3), 
+#editor table tbody tr td:nth-child(4) {
+	width: calc(65% * 33.44 / 100);
+	height: 30px;
+}
+
+#editor table tbody tr td:nth-child(5) {
+	width: 10%;
+	height: 30px;
+}
+
+#editor table tbody tr td span {
+	margin: 5px;
+}
+
+#element-slider {
+	position: relative;
+	height: 30px;
+	width: 100vw;
+	background: #33333333;
+	border-radius: 5px;
+	transition: 300ms;
+	opacity: 0;
+}
+
+#element-slider.active {
+	height: 30px;
+	opacity: 1;
+}
