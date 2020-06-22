@@ -125,6 +125,9 @@ function showLoadScreen() {
             _$('#editor').classList.add('active')
             _$('#new-table-screen').classList.remove('active')
             clearInterval(check)
+            /**@type {Array<{label: string, callback: function}>} */
+            let sbTemplate = get_module('modules/float-menu/editor-side-bar')
+            // append side bar template here
         }
     }, 500)
 }

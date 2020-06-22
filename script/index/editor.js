@@ -1,4 +1,5 @@
 (function() {
+	console.log(sbTemplate)
 	_$('#editor-table').addEventListener('mouseenter', function() {
 		// showNotification('Mouse Overed')
 		_$('#element-slider').classList.add('active')

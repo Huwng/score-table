@@ -4,7 +4,7 @@
      */
     let shared_var = getSharedvar()
     let fs = getFS()
-    if (shared_var.invoke.firstUse) {
+    if (!fs.existsSync(`${shared_var.path.appData}/ScoreTable/`)) {
         // append sign up screen
         shared_var.invoke.debug('preparing for first use')
         // append folder ${appdata}/Scoretable

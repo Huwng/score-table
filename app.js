@@ -19,14 +19,12 @@ global.shared = {
         dirname: __dirname
     },
     invoke: {
-        firstUse: false,
-        debug: function(msg) { console.log(msg) },
+        debug: function(msg) { console.log(msg) }
     }
 }
 
 app.on('ready', () => {
-    preload()
-        // create main window 
+    // create main window 
     window = new BrowserWindow({
             // height and width
             width: 1100,
@@ -54,15 +52,6 @@ app.on('ready', () => {
     window.once('ready-to-show', window.show)
     window.webContents.openDevTools()
 })
-
-/**
- * action pre-loading
- * - check first use 
- *  - if first use, active signup screen
- */
-function preload() {
-    global.shared.invoke.firstUse = checkFirstUse()
-}
 
 
 /**
