@@ -1,4 +1,5 @@
 // get the required data from "Table.json" (temporary until multiple table update or @Huwng somehow becomes competent at JS developing
+let fs = getFS()
 let shared_var = getSharedvar()
 function tablereader() {
     data = json.parse(fs.readFileSync(`${shared_var.path.appData}/ScoreTable/Table.json`))
@@ -6,7 +7,7 @@ function tablereader() {
 /** write the data back to "Table.json" */
 function tablewriter(data) {
     fs.writeFileSync(`${shared_var.path.appData}/ScoreTable/Table.json`, data)
-    console.log("write success")
+    pushlog("write success")
 }
 
 function calcavgmarks(name) {
@@ -32,7 +33,7 @@ function calcavgmarks(name) {
     data.name.avgmarks = t
 }
 // below are just learning english w/@Huwng, don't mind that.
-const subjects = ["Math", "Literature", "Physics", "Chemistry", "Biology", "ForeignLanguage", "History", "Geography", "CivicEducation", "ComputerScience", "NationalDefenseEducation"]
+const subjects = ["Math", "Literature", "Physics", "Chemistry", "Biology", "Foreign Language", "History", "Geography", "Civic Education", "Computer Science", "National Defense Education"]
 function calcTotalavg() {
     for (i in subjects) {
         t += data.subjects[i].avgmarks

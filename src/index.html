@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="../style/panel.css">
     <link rel="stylesheet" href="../style/login-screen.css">
     <link rel="stylesheet" href="../style/create-table.css">
+    <link rel="stylesheet" href="../style/loading.css">
+    <link rel="stylesheet" href="../style/editor.css">
     <meta charset="UTF-8">
     <title id="process-title"></title>
 </head>
@@ -20,7 +22,7 @@
                 <img class="btn-img" src="../res/black-icon/more.png" alt="">
             </div>
             <div class="title flex f-start" id="app-title">
-                <label for="app-title">This is title</label>
+                <label for="app-title">Score Table v0.0-dev</label>
             </div>
             <div class="button flex f-center" id="app-minimize">
                 <img src="../res/black-icon//minimize.png" alt="" class="btn-img">
@@ -60,22 +62,45 @@
     <div id="notification" class="noti flex f-center">
         <span></span>
     </div>
+    <!--! New subject float popup -->
+    <div id="float-add-subject" class="flex f-space-a f-vertical">
+        <div class="header" class="flex f-center">
+            <span>Enter Subject Name:</span>
+        </div>
+        <input type="text" id="float-add-subject-inp">
+        <div class="button">
+            <button id="confirm-add-subject">Add</button>
+            <button id="cancel-add-subject">Cancel</button>
+        </div>
+    </div>
     <!--! App main panel -->
     <div class="app-panel flex f-start">
         <!--! Left side bar -->
-        <div class="side-bar" id="app-sidebar">
-            <div class="side-bar-body">
+        <div class="side-bar flex f-center f-vertical active" id="app-sidebar">
+            <div class="side-bar-body flex f-center f-vertical" id="side-bar-body">
                 <!-- Side bar body -->
+                <div class="card flex f-center">
+                    <span>Editor</span>
+                </div>
             </div>
-            <div class="side-bar-footer">
+            <div class="side-bar-footer flex f-space-a">
                 <!-- Side bar footer -->
+                <div id="side-info" class="flex f-center">
+                    <img src="../res/white-icon/info.png" alt="">
+                </div>
+                <div id="side-settings" class="flex f-center">
+                    <img src="../res/white-icon/config.png" alt="">
+                </div>
+                <div id="side-exit" class="flex f-center">
+                    <img src="../res//white-icon/exit.png" alt="">
+                </div>
             </div>
         </div>
         <!--! Main body off application -->
         <div class="body" id="app-body">
             <!--! Login screen -->
             <div id="login-screen" class="flex f-center">
-                <form action="login" class="flex f-space-a f-vertical">
+                <div class="login flex f-space-a f-vertical">
                     <div class="form-title flex f-center">
                         <span id="login-title">Login</span>
                     </div>
@@ -84,13 +109,13 @@
                         <input type="password" id="inp-pass">
                     </div>
                     <button id="smt-login">Submit</button>
-                </form>
+                </div>
             </div>
             <!--! New table screen -->
             <div id="new-table-screen" class="flex f-center f-vertical">
                 <div class="table-name flex f-center">
                     <span>Table name:</span>
-                    <input type="text">
+                    <input type="text" id="get-table-name">
                 </div>
                 <div class="subject-selection flex f-center f-vertical">
                     <span><strong>Seclect subject</strong></span>
@@ -101,6 +126,90 @@
                     </div>
                 </div>
             </div>
+            <!--! load editor screen -->
+            <div id="loading-editor" class="flex f-center">
+                <div class="load-animation flex f-center f-vertical">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                        style="margin: auto; background: rgba(241, 242, 243, 0); display: block; shape-rendering: auto;"
+                        width="200px" height="200px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
+                        <g transform="translate(50 50)">
+                            <g transform="scale(0.7)">
+                                <g transform="translate(-50 -50)">
+                                    <g transform="rotate(311.823 50 50)">
+                                        <animateTransform attributeName="transform" type="rotate"
+                                            repeatCount="indefinite" values="0 50 50;360 50 50" keyTimes="0;1"
+                                            dur="0.7352941176470589s"></animateTransform>
+                                        <path fill-opacity="0.8" fill="#93dbe9"
+                                            d="M50 25 L50 0 A50 50 0 0 1 100 50 L 75 50 A 25 25 0 0 0 50 25 L 50 0 Z">
+                                        </path>
+                                    </g>
+                                    <g transform="rotate(323.868 50 50)">
+                                        <animateTransform attributeName="transform" type="rotate"
+                                            repeatCount="indefinite" values="0 50 50;360 50 50" keyTimes="0;1"
+                                            dur="0.9803921568627451s"></animateTransform>
+                                        <path fill-opacity="0.8" fill="#689cc5"
+                                            d="M50 25 L50 0 A50 50 0 0 1 100 50 L 75 50 A 25 25 0 0 0 50 25 L 50 0 Z"
+                                            transform="rotate(90 50 50)"></path>
+                                    </g>
+                                    <g transform="rotate(335.912 50 50)">
+                                        <animateTransform attributeName="transform" type="rotate"
+                                            repeatCount="indefinite" values="0 50 50;360 50 50" keyTimes="0;1"
+                                            dur="1.4705882352941178s"></animateTransform>
+                                        <path fill-opacity="0.8" fill="#5e6fa3"
+                                            d="M50 25 L50 0 A50 50 0 0 1 100 50 L 75 50 A 25 25 0 0 0 50 25 L 50 0 Z"
+                                            transform="rotate(180 50 50)"></path>
+                                    </g>
+                                    <g transform="rotate(347.956 50 50)">
+                                        <animateTransform attributeName="transform" type="rotate"
+                                            repeatCount="indefinite" values="0 50 50;360 50 50" keyTimes="0;1"
+                                            dur="2.9411764705882355s"></animateTransform>
+                                        <path fill-opacity="0.8" fill="#3b4368"
+                                            d="M50 25 L50 0 A50 50 0 0 1 100 50 L 75 50 A 25 25 0 0 0 50 25 L 50 0 Z"
+                                            transform="rotate(270 50 50)"></path>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </svg>
+                    <div class="label">
+                        <strong>LOADING EDITOR... 0%</strong>
+                    </div>
+                </div>
+            </div>
+            <!--! Editor screen -->
+            <div id="editor">
+                <div class="header flex f-center">
+                    <div class="subject flex f-center">
+                        <label>Subject</label>
+                    </div>
+                    <div class="editable-marks">
+                        <div class="marks-def m-header flex f-center">
+                            <label>Editable Marks</label>
+                        </div>
+                        <div class="marks-def m-body flex f-center">
+                            <div class="marks type1 flex f-center">
+                                <label>Type 1</label>
+                            </div>
+                            <div class="marks type2 flex f-center">
+                                <label>Type 2</label>
+                            </div>
+                            <div class="marks type3 flex f-center">
+                                <label>Type 3</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="avg-marks flex f-center">
+                        <label>AVG</label>
+                    </div>
+                </div>
+                <div class="table">
+                    <table id="editor-table">
+                        <div id="element-slider" class=""></div>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     </div>
     <!--! Script zone -->
@@ -108,6 +217,7 @@
         var remote = require('electron').remote
         var shared = remote.getGlobal('shared')
         var fsmodule = require('fs')
+        var edit_mode = false
         function get_module(module) {
             return require(`../script/${module}`)
         }
@@ -116,6 +226,8 @@
     <script src="../script/index/prepaire.js"></script>
     <script src="../script/index/navigation.js"></script>
     <script src="../script/index/float-menu.js"></script>
+    <script src="../script/index/login-screen.js"></script>
+    <script src="../script/index/editor.js"></script>
 </body>
 
 </html>

@@ -88,6 +88,22 @@
     transition-delay: 150ms;
 }
 
+.float-menu span:nth-child(5) {
+    transition-delay: 200ms;
+}
+
+.float-menu span:nth-child(6) {
+    transition-delay: 250ms;
+}
+
+.float-menu span:nth-child(7) {
+    transition-delay: 3000ms;
+}
+
+.float-menu span:nth-child(8) {
+    transition-delay: 350ms;
+}
+
 .float-close {
     width: 200px;
     height: 100px;
@@ -148,4 +164,57 @@
 
 .float-close.active .option {
     transform: translateX(0);
+}
+
+#float-add-subject {
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    z-index: 100;
+    bottom: 60px;
+    right: -100%;
+    background: #ffffff;
+    box-shadow: #00000044 2px 2px 3px;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: 400ms;
+    visibility: hidden;
+    opacity: 0;
+}
+
+#float-add-subject.active {
+    width: 400px;
+    height: 100px;
+    right: 40px;
+    visibility: visible;
+    opacity: 1;
+}
+
+#float-add-subject .header {
+    height: 25px;
+}
+
+#float-add-subject input {
+    width: 90%;
+    height: 30px;
+    background: #00000000;
+    border: none;
+    border-bottom: #5f5f5f solid 1px;
+    text-align: center;
+}
+
+#float-add-subject button {
+    width: 60px;
+    height: 30px;
+    background: #ddffdd44;
+    border: none;
+    border-radius: 10px;
+}
+
+#float-add-subject #confirm-add-subject:hover {
+    background-color: #00ff0044;
+}
+
+#float-add-subject #cancel-add-subject:hover {
+    background-color: #ff000044;
 }

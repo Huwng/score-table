@@ -19,14 +19,12 @@ global.shared = {
         dirname: __dirname
     },
     invoke: {
-        firstUse: false,
         debug: function(msg) { console.log(msg) }
     }
 }
 
 app.on('ready', () => {
-    preload()
-        // create main window 
+    // create main window 
     window = new BrowserWindow({
             // height and width
             width: 1100,
@@ -38,7 +36,8 @@ app.on('ready', () => {
             webPreferences: {
                 nodeIntegration: true,
                 enableRemoteModule: true,
-                spellcheck: false
+                spellcheck: false,
+                devTools: true
             },
             // window should be shown after it ready
             show: false,
@@ -51,16 +50,8 @@ app.on('ready', () => {
     window.loadURL(`file:///${__dirname}/src/index.html`)
         // when window is ready, show it
     window.once('ready-to-show', window.show)
+    window.webContents.openDevTools()
 })
-
-/**
- * action pre-loading
- * - check first use 
- *  - if first use, active signup screen
- */
-function preload() {
-    global.shared.invoke.firstUse = checkFirstUse()
-}
 
 
 /**

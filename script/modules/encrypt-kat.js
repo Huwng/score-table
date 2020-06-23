@@ -26,5 +26,4 @@ function ex_encrypt(data, passcode = '') {
 }
 
 module.exports = {
-	
 }
